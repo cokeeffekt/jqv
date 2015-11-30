@@ -2,7 +2,7 @@
   "name": "jqc",
   "version": "1.0.0",
   "main": [
-    "src/jqv.js"
+    "dist/jqv.js"
   ],
   "homepage": "https://github.com/cokeeffekt/jqv.git",
   "authors": [
