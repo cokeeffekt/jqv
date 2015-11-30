@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>tests</title>
+
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .black {
+      color: black;
+    }
+  </style>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/mustache.js/mustache.js"></script>
+  <script src="dist/jqv.js"></script>
+
+  <script>
+    var obj = {
+      test: 'HelloWorld',
+      class: 'red'
+    };
+
+    var tmp = {
+      tag: 'div',
+      class: function () {
+        return 'class' + (1 * 4)
+      },
+      content: [{
+        tag: 'h1',
+        content: function () {
+          return 'hello' + (6 * 4)
+        }
+      }, {
+        tag: 'h5',
+        content: 'world'
+      }, {
+        tag: 'input',
+        class: '{{class}}',
+        placeholder: 'hello'
+      }]
+    };
+
+    $(function () {
+
+      var $test = jqv.new(tmp, obj);
+      $(document.body).append($test);
+      var colors = ['blue', 'red', 'green', 'black'];
+      $test.on('keyup', 'input', function () {
+        var rand = colors[Math.floor(Math.random() * colors.length)];
+        obj.class = rand;
+        $test.draw();
+      });
+
+
+    });
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

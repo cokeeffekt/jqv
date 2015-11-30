@@ -1,0 +1,22 @@
+{
+  "name": "jqv",
+  "version": "1.0.0",
+  "description": "simple jqquery views",
+  "main": "jqv.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cokeeffekt/jqv.git"
+  },
+  "author": "Patrik Hartwig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cokeeffekt/jqv/issues"
+  },
+  "homepage": "https://github.com/cokeeffekt/jqv"
+}

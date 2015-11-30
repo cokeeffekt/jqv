@@ -1,0 +1,19 @@
+{
+  "name": "jqc",
+  "version": "1.0.0",
+  "main": [
+    "src/jqv.js"
+  ],
+  "homepage": "https://github.com/cokeeffekt/jqv.git",
+  "authors": [
+    "Patrik Hartwig"
+  ],
+  "description": "simple jquery views",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "jquery": ">=1.8.2",
+    "mustache.js": "mustache#~2.2.0"
+  },
+  "ignore": []
+}
