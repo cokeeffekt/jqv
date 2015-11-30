@@ -8,18 +8,22 @@
   <style>
     .red {
       color: red;
+      font-size: 1rem;
     }
 
     .blue {
       color: blue;
+      font-size: 2rem;
     }
 
     .green {
       color: green;
+      font-size: 1.5rem;
     }
 
     .black {
       color: black;
+      font-size: 2.5rem;
     }
   </style>
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -39,12 +43,10 @@
       },
       content: [{
         tag: 'h1',
-        content: function () {
-          return 'hello' + (6 * 4)
-        }
+        content: '{{test}}'
       }, {
         tag: 'h5',
-        content: 'world'
+        content: '{{ok}}'
       }, {
         tag: 'input',
         class: '{{class}}',
@@ -58,6 +60,7 @@
       $(document.body).append($test);
       var colors = ['blue', 'red', 'green', 'black'];
       $test.on('keyup', 'input', function () {
+        obj.ok = $(this).val();
         var rand = colors[Math.floor(Math.random() * colors.length)];
         obj.class = rand;
         $test.draw();
