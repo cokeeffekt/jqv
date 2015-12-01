@@ -354,7 +354,6 @@
           html = html.html();
       var ref, diffRef;
 
-      console.log(this);
       return this.map(function () {
         // Create clone
         ref = this.cloneNode(false);
