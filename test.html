@@ -51,6 +51,10 @@
         tag: 'input',
         class: '{{class}}',
         placeholder: 'hello'
+      }, {
+        tag: 'div',
+        class: 'dontdiff',
+        content: 'afterdomchangeme'
       }]
     };
 
@@ -58,6 +62,7 @@
 
       var $test = jqv.new(tmp, obj);
       $(document.body).append($test);
+      $test.find('.dontdiff').text('cant diff this');
       var colors = ['blue', 'red', 'green', 'black'];
       $test.on('keyup', 'input', function () {
         obj.ok = $(this).val();
