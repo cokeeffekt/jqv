@@ -262,16 +262,19 @@
        */
       function diffRecursive(a, b, namespaceA, namespaceB) {
 
+
+
+        var i, length, delta, isLeaf, isSame, result = '';
+
         if (a.classList && b.classList) {
           if (a.classList.length && b.classList.length) {
             if (a.classList.contains('dontdiff') || b.classList.contains('dontdiff'))
-              return;
+              return result;
           }
 
         }
 
 
-        var i, length, delta, isLeaf, isSame, result = '';
         isLeaf = nodeLeaf(a, b);
         isSame = nodeSame(a, b);
         // Node are the same so compare difference in attributes
