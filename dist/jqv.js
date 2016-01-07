@@ -46,7 +46,7 @@
       rTemplate = Mustache.render(template, obj);
       $ret.diffhtml($(rTemplate));
       if (typeof ondraw == 'function')
-        ondraw();
+        ondraw.apply($ret);
     };
     return $ret;
   };
@@ -268,10 +268,10 @@
 
         if (a.classList && b.classList) {
           if (a.classList.length && b.classList.length) {
-            if (a.classList.contains('dontdiff') || b.classList.contains('dontdiff'))
+            if (a.classList.contains('dontdiff') || b.classList.contains('dontdiff')) {
               return result;
+            }
           }
-
         }
 
 

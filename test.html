@@ -56,8 +56,17 @@
         class: 'dontdiff',
         content: [{
           tag: 'div',
-          class: 'inner',
-          content: 'change'
+          content: [{
+            tag: 'div',
+            content: [{
+              tag: 'div',
+              content: [{
+                tag: 'div',
+                class: 'inner',
+                content: 'change'
+          }]
+        }]
+          }]
         }]
       }, {
         tag: 'h5',
@@ -69,7 +78,7 @@
 
       var $test = jqv.new(tmp, obj);
       $(document.body).append($test);
-      $test.find('.dontdiff .inner').text('cant diff this');
+      $test.find('.dontdiff .inner').html('<h3>cant diff this</h3>');
       var colors = ['blue', 'red', 'green', 'black'];
       $test.on('keyup', 'input', function () {
         obj.ok = $(this).val();
