@@ -47,6 +47,8 @@
       $ret.diffhtml($(rTemplate));
       if (typeof ondraw == 'function')
         ondraw.apply($ret);
+
+      return $ret;
     };
     return $ret;
   };
