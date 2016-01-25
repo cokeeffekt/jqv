@@ -13,7 +13,7 @@
       if (!n.tag) return;
 
       var tag = n.tag;
-      output.push('<' + n.tag)
+      output.push('<' + n.tag);
       delete n.tag;
 
       if (n.content)
@@ -42,11 +42,23 @@
       template = json2html(template);
     var rTemplate = Mustache.render(template, obj);
     var $ret = $(rTemplate);
+    $ret.objData = obj;
+
+    $ret.reset = function () {
+      rTemplate = Mustache.render(template, $ret.objData);
+      $ret.replaceWith(rTemplate);
+    };
     $ret.draw = function () {
-      rTemplate = Mustache.render(template, obj);
+      rTemplate = Mustache.render(template, $ret.objData);
       $ret.diffhtml($(rTemplate));
       if (typeof ondraw == 'function')
         ondraw.apply($ret);
+      return $ret;
+    };
+
+    $ret.setObj = function (newObj) {
+      $ret.objData = newObj;
+      return $ret;
     };
     return $ret;
   };
